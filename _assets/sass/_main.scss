@@ -1,0 +1,275 @@
+body{
+   background-color: $white;
+    @include at-breakpoint(12 $tablet-break) {
+        background-image: url('../images/texture_footer.png');
+    }
+}
+
+// Extednables
+.article-header{
+    @include border-radius($baseBorderRadius);
+    text-decoration:none;
+    color:$gray;
+    padding-left:0.3em;
+    padding-right:0.3em;
+    background-color:$grayLighter;
+    line-height: $baseFontSize * 1.2;
+    font-weight: 200;
+}
+
+.main-container{
+    margin-top: $header-height;
+    background-color: $white;
+    .main{
+        section{
+            @include clearfix;
+            @include container;
+            min-height:340px;
+            display:none;
+            @include at-breakpoint(12 $tablet-break) {
+                display:block;
+            }
+            z-index: 800;
+            .section-heading{
+                @include box-shadow(rgba($black, 0.4) 0 -2px 10px);
+                background-color: $grayDark;
+                margin-top:20px;
+                padding-left: columns(1,24);
+                padding-right: columns(1,24);
+                text-align:right;
+                display:none;
+                position:relative;
+                font-size:$baseFontSize * 2;
+                line-height:$baseFontSize * 4;
+                font-weight:300;
+                @include clearfix();
+                i{
+                    line-height:$baseFontSize * 4;
+                    float:left;
+                }
+                position:relative;
+                @include at-breakpoint(12 $tablet-break) {
+                    display:block;
+                }
+
+            }
+
+            // Home
+            &#home{
+                z-index:700;
+                display:none;
+                @include at-breakpoint(12 $tablet-break) {
+                    display:block;
+                    width:100%;
+                    height:220px;
+                    overflow:hidden;
+                }
+                &.show{
+                    display:block;
+                }
+                article{
+                    @include span-columns(12 omega,12);
+                    @include background-size(70% auto);
+                    min-height:640px;
+                    background-repeat: no-repeat;
+                    background-position: top right;
+                    display:none;
+                    &:nth-child(1){
+                        display:block;
+                    }
+                    position:absolute;
+                    top:$header-height;
+                    left:0;
+                    @include at-breakpoint(12 $tablet-break) {
+                        @include background-size(100% auto);
+                    }
+
+                    header{
+                        margin-top: 200px;
+                        @include span-columns(4,12);
+                        @include at-breakpoint(12 $tablet-break) {
+                            @include span-columns(7,12);
+                        }
+                        @include pre(1);
+                        .element{
+                            font-size:3.8em;
+                            font-weight:300;
+                        }
+                        ul{
+                            @include at-breakpoint(12 $tablet-break) {
+                                display:none;
+                            }
+                            list-style-type:none;
+                            margin:0;
+                            padding:0;
+                            li{
+                                float:left;
+                                font-weight:300;
+                                font-size:1.1em;
+                                color:$grayLighter;
+                                em{
+                                    font-style: normal;
+                                    color:$grayLight;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // Sub Pages
+            .content{
+                @include span-columns(6,12);
+                @include pre(1);
+
+                @include at-breakpoint(12 $tablet-break) {
+                  @include span-columns(11,12);
+                  @include post(1);
+                  position:relative;
+                  display:block;
+                }
+
+                header{
+                    margin-top:50px;
+                    .title{
+                        font-size: $baseFontSize * 2;
+                        font-weight:300;
+                    }
+                    nav{
+                        @include at-breakpoint(12 $tablet-break) {
+                          display:none;
+                        }
+                        ul{
+                            @include clearfix;
+                            list-style-type:none;
+                            margin:28px 0;
+                            padding:0;
+                            li{
+                                float:left;
+                                display:block;
+                                  a{
+                                    @extend .article-header;
+                                    display:block;
+                                    padding-top:15px;
+                                    padding-bottom:5px;
+                                    &:visited, &:active{
+                                        color:$gray;
+                                    }
+                                    &:hover, &.active{
+                                        background-color:$grayDarker;
+                                        color:$white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                article{
+                    header{
+                        @extend .article-header;
+                        margin-top:25px;
+                        margin-bottom:10px;
+                        padding-top:25px;
+                        padding-bottom:10px;
+                        @include at-breakpoint($tablet-break 12) {
+                          display:none;
+                        }
+                    }
+                    p{
+                        font-weight:300;
+                        color:$grayDark;
+                        line-height:$baseFontSize*1.4;
+                    }
+                }
+            }
+            &#process {
+                &.show{
+                    display:block;
+                }
+                .section-heading{
+
+                    border:10px solid $processColor;
+                    border-width:0 0 5px 0;
+                    color:$white;
+                }
+                .content {
+                    margin-bottom:100px;
+                    header nav ul li {
+                        @include span-columns(4,12);
+                        @include nth-omega();
+                    }
+                }
+            }
+            &#services {
+                &.show{
+                    display:block;
+                }
+                .section-heading{
+                    border:10px solid $serviceColor;
+                    border-width:0 0 5px 0;
+                    color:$white;
+                }
+                .content {
+                    header nav ul li{
+                        @include span-columns(2,12);
+                        @include nth-omega();
+                    }
+                }
+            }
+            &#about {
+                &.show{
+                    display:block;
+                }
+                .section-heading{
+                    border:10px solid $aboutColor;
+                    border-width:0 0 5px 0;
+                    color:$white;
+                }
+                .content {
+                    header nav ul li {
+                        @include span-columns(4,12);
+                        @include nth-omega();
+                    }
+                }
+            }
+            aside{
+                @include span-columns(5 omega,12);
+                @include at-breakpoint(12 $tablet-break) {
+                  display:none;
+                }
+                section{
+                    @include background-size(100% auto);
+                    background-repeat:no-repeat;
+                    background-position: 0 50px;
+                    width:100%;
+                    display:block;
+                    min-height:640px;
+                }
+            }
+
+        }
+
+    }
+    #fire   {background-image: url("../images/bg_element_fire.jpg");}
+    #water  {background-image: url("../images/bg_element_water.jpg");}
+    #air    {background-image: url("../images/bg_element_air.jpg");}
+    #earth  {background-image: url("../images/bg_element_earth.jpg");}
+    #life   {background-image: url("../images/bg_element_life.jpg");}
+
+    #about .communicate {background-image: url("../images/bg_about_communicate.jpg");}
+    #about .organize    {background-image: url("../images/bg_about_organize.jpg");}
+    #about .work        {background-image: url("../images/bg_about_work.jpg");}
+
+    #process .discover {background-image: url("../images/bg_process_discover.jpg")}
+    #process .workhard {background-image: url("../images/bg_process_workhard.jpg")}
+    #process .lookgood {background-image: url("../images/bg_process_lookgood.jpg")}
+
+    #services .brand    {background-image: url("../images/bg_services_brand.jpg")}
+    #services .online   {background-image: url("../images/bg_services_online.jpg")}
+    #services .print    {background-image: url("../images/bg_services_print.jpg")}
+    #services .ideas    {background-image: url("../images/bg_services_ideas.jpg")}
+    #services .design   {background-image: url("../images/bg_services_design.jpg")}
+    #services .ux       {background-image: url("../images/bg_services_ux.jpg")}
+}
+
+
+/* ======================================================= */

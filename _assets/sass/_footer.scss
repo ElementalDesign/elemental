@@ -1,0 +1,197 @@
+
+.footer-container{
+    footer{
+        border-top:10px solid $white;
+        &.about{
+            border-top:10px solid $aboutColor;
+        }
+        &.services{
+            border-top:10px solid $serviceColor;
+        }
+        &.process{
+            border-top:10px solid $processColor;
+        }
+        position:fixed;
+        bottom:0;
+        padding-bottom: 25px;
+        left:0;
+        width:100%;
+        background-color: $gray;
+        background-image: url('../images/texture_footer.png');
+        @include at-breakpoint(12 $tablet-break) {
+            background-color: transparent;
+            background-image: none;
+            position:relative;
+        }
+        @include container();
+        @include clearfix;
+        z-index:1000;
+        nav{
+            @include at-breakpoint(12 $tablet-break) {
+                display:none;
+            }
+            @include span-columns(22 omega,24);
+            @include squish(1,1);
+            position:relative;
+            ul{
+                position: absolute;
+                bottom:-40px;
+                left:0;
+                @include clearfix;
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                width:100%;
+                li{
+                    @include span-columns(4,12);
+                    @include nth-omega();
+                    float:left;
+                    display:block;
+                    position:relative;
+                    .nav-block{
+                        display:block;
+                        width:100%;
+                        min-height:$baseLineHeight *2;
+                        position:relative;
+                        a{
+                            border:1px solid $black;
+                            background-color: $white;
+                            @include border-radius($baseBorderRadius);
+                            width:100%;
+                            position:absolute;
+                            bottom:0;
+                            display:block;
+                            text-decoration:none;
+                            color:$grayDarker;
+                            header{
+                                padding: 15px;
+                                font-weight:400;
+                                font-size: $baseFontSize * 1.2;
+                                @include border-radius($baseBorderRadius);
+                            }
+                            p{
+                                font-weight:300;
+                                padding: 0 15px 15px;
+                                font-size: $baseFontSize * 0.8;
+                                line-height: 1.1em;
+                            }
+                            i{
+                                position:absolute;
+                                bottom:-20px;
+                                right:5px;
+                                width:40px;
+                                height:40px;
+                                line-height:35px;
+                                background-color:$white;
+                                @include border-radius(30px);
+                                border: 2px solid $grayDarker;
+                            }
+                            &:hover{
+                                // background-color:$grayLighter;
+                                //@include box-shadow(rgba($black, 0.7) 2px 2px 10px);
+
+                            }
+                        }
+                    }
+                    #navAbout{
+                        a:hover, a.active{
+                            header{
+                                border-top: 5px solid $aboutColor;
+                            }
+                        }
+
+                    }
+                    #navProcess{
+                        a:hover, a.active{
+                            header{
+                                border-top: 5px solid $processColor;
+                            }
+                        }
+                    }
+                    #navService{
+                        a:hover, a.active{
+                            header{
+                                border-top: 5px solid $serviceColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contact{
+            @include span-columns(11,24);
+            @include pre(1);
+            margin-top:80px;
+            @include at-breakpoint(12 $tablet-break) {
+                @include span-columns(11,12);
+                margin-top:20px;
+            }
+            dl{
+                margin:0;
+                dt{
+                    font-weight:300;
+                    font-size:1.1em;
+                    margin-bottom:10px;
+                    padding-top:60px;
+                    background-image: url('../images/icon_elements.png');
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                    color:$grayLight;
+                }
+                dd{
+                    color:$grayLight;
+                    margin:0;
+                    padding:0;
+                    font-weight: 200;
+                    font-size:0.9em;
+                }
+            }
+        }
+        .quotes{
+            display:block;
+            @include span-columns(11 omega,24);
+            @include post(1);
+            margin-top:100px;
+            @include at-breakpoint(12 $tablet-break) {
+                margin-top:0;
+            }
+            ul{
+                @include clearfix();
+                width: columns(1,1);
+                @include at-breakpoint(12 $tablet-break) {
+                    float:left;
+                }
+                float:right;
+                list-style-type: none;
+                margin:0;
+                padding:0;
+                color:$grayLight;
+                li{
+                    display:none;
+                    width:100%;
+                    blockquote{
+                        width:100%;
+                        margin:0 0 10px;
+                        font-weight:100;
+                        text-align:right;
+                        @include at-breakpoint(12 $tablet-break) {
+                            text-align:left;
+                        }
+                    }
+                    cite{
+                        text-align:right;
+                        display:block;
+                        font-weight:300;
+                        margin-bottom:15px;
+                         @include at-breakpoint(12 $tablet-break) {
+                            text-align:left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* ======================================================= */

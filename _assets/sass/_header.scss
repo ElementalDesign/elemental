@@ -1,0 +1,98 @@
+
+.header-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: $header-height;
+    background: $header-background;
+    z-index:1000;
+    @include box-shadow(rgba($black, 0.7) 2px 2px 10px);
+    header{
+        @include container();
+        line-height: $header-height;
+        font-size: 16px;
+        font-weight:300;
+        letter-spacing: 0.1em;
+        .title{
+            @include span-columns(7,12);
+            @include pre(1);
+            a{
+              @include link-colors($white, $white, $white, $white, $white);
+              text-decoration:none;
+            }
+        }
+        .roots {
+            @include span-columns(3 omega, 12);
+            @include post(1);
+            text-align:right;
+            @include clearfix();
+            .roots-dropdown{
+                float:right;
+                display:block;
+                height:$header-height;
+                background:$grayDarker;
+                color:$white;
+                text-decoration:none;
+                i{
+                    color:$grayLight;
+                    padding:0 15px;
+                    text-align:center;
+                    line-height: $header-height;
+                }
+            }
+            .roots-container{
+              letter-spacing: normal;
+              @include box-shadow(rgba($black, 0.3) 2px 2px 10px);
+              width:220px;
+              display:none;
+              position:absolute;
+              top:$header-height;
+              right:columns(1,24);
+              text-align:right;
+              padding:20px;
+              background-color:$white;
+              border: 1px solid $header-background;
+              header{
+                line-height:$baseLineHeight*1.1;
+                font-size:$baseFontSize * 0.8;
+                font-weight:400;
+              }
+              p{
+                font-size:$baseFontSize * 0.8;
+                font-weight:300;
+                line-height:$baseLineHeight * 0.8;
+              }
+              ul{
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                float:right;
+                li{
+                    float:left;
+                    font-size:$baseFontSize * 0.7;
+                    padding-right:5px;
+
+                    &:after {
+                        content: " |"
+                    }
+
+                    a{
+                        text-decoration:none;
+                        color:$aboutColor;
+                        &:hover{
+                            color:$serviceColor;
+                        }
+                    }
+                    &:nth-child(3):after{
+                        content: "";
+                    }
+                }
+              }
+            }
+        }
+    }
+
+}
+
+/* ======================================================= */

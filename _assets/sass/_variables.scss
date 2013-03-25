@@ -1,0 +1,100 @@
+// Susy Grid Values
+// -------------------------
+$total-columns: 24;
+$column-width: 30px;
+$gutter-width: 10px;
+$grid-padding: 0px;
+$container-style: fluid;
+
+// Grays
+// -------------------------
+$black:                 #000000 !default;
+$grayDarker:            #1f1f1f !default;
+$grayDark:              #292929 !default;
+$gray:                  #898989 !default;
+$grayLight:             #d2d2d2 !default;
+$grayLighter:           #ebebeb !default;
+$grayLightest:           #f3f3f3 !default;
+$white:                 #fff !default;
+
+
+// Accent colors
+// -------------------------
+$blue:                  #049cdb !default;
+$blueDark:              #0064cd !default;
+$green:                 #46a546 !default;
+$red:                   #9d261d !default;
+$yellow:                #ffc40d !default;
+$orange:                #f89406 !default;
+$pink:                  #c3325f !default;
+$purple:                #7a43b6 !default;
+
+$aboutColor:            #95c93d;
+$serviceColor:          #005d9c;
+$processColor:          #97765b;
+
+
+// Links
+// -------------------------
+$linkColor:             #08c !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+
+
+// Typography
+// -------------------------
+$sansFontFamily:        "Muli", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
+$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !default;
+
+$baseFontSize:          16px !default;
+$baseFontFamily:        $sansFontFamily !default;
+$baseLineHeight:        20px !default;
+$altFontFamily:         $serifFontFamily !default;
+
+$headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    400 !default;    // instead of browser default, bold
+$headingsColor:         inherit !default; // empty to use BS default, $textColor
+
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+$fontSizeLarge:         $baseFontSize * 1.25; // ~18px
+$fontSizeSmall:         $baseFontSize * 0.85; // ~12px
+$fontSizeMini:          $baseFontSize * 0.75; // ~11px
+
+$paddingLarge:          11px 19px !default; // 44px
+$paddingSmall:          2px 10px !default;  // 26px
+$paddingMini:           0px 6px !default;   // 22px
+
+$baseBorderRadius:      6px !default;
+$borderRadiusLarge:     10px !default;
+$borderRadiusSmall:     3px !default;
+
+
+// Input placeholder text color
+// -------------------------
+$placeholderText:         $grayLight !default;
+
+
+// Hr border color
+// -------------------------
+$hrBorder:                $grayLighter !default;
+
+// Horizontal forms & lists
+// -------------------------
+$horizontalComponentOffset:       180px !default;
+
+// Header
+// -------------------------
+$header-height: 40px;
+$header-background: $grayDark;
+
+// Main
+// -------------------------
+$main-background: $white;
+
+// Breakpoints
+// -------------------------
+$tablet-break: 360px;
